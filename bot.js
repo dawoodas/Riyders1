@@ -9,7 +9,7 @@ client.on('ready', () => {
     console.log(`on  ${client.guilds.size} Servers `);
     console.log(`~~~~~~~~~~~~~~~~~~~~~~~~`);
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setGame(`#Riyderz Games|-Help`,"http://twitch.tv/y04zgamer")
+    client.user.setGame(`#Riyderz Bot|-Help`,"http://twitch.tv/y04zgamer")
     client.user.setStatus("dnd")
  });
  
