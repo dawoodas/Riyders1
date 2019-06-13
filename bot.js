@@ -16,57 +16,6 @@ client.on('ready', () => {
 
 
 
-client.on('message' , async message => {
-            if(message.content.startsWith(prefix + "ads")) { //Toxic Codes
-     await message.channel.send("`ارسال الرساله .`").then(e => { //Toxic Codes
-    let filter = m => m.author.id === message.author.id
-    let tests = '';
-    let time = '';
-    let channel = '';
-    let chaTests = message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-    .then(collected => {
-      tests = collected.first().content
-      collected.first().delete()
-e.edit("`تكرار الرساله كل ....... دقائق`")
-let chaTime = message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })//Toxic Codes
-.then(co => {
-if(isNaN(co.first().content)) return message.reply("`الوقت بالدقائق ! ارقام فقطٍ`");//Toxic Codes
-if(co.first().content > 1500 || co.first().content < 1) return message.channel.send("`لا اقل من دقيقه ولا اكثر من يوم`") //Toxic Codes
-  time = co.first().content
-co.first().delete()
-  e.edit("`cmd`") //Toxic Codes
-  let chaChannel = message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] }) //Toxic Codes
-.then(col => { //Toxic Codes
-  channel = col.first().content
-col.first().delete()
-  e.edit("`جاري اعداد المعلومات الرجاء الانتظاار...`").then(b => { //Toxic Codes
-              setTimeout(() => {
-    b.edit(`** تم اعداد المعلومات بنجاح .**`)
-        },2000);
-  })
-  var room = message.guild.channels.find('name' , channel) //Toxic Codes
-  if(!room) return;
-  if (room) {
-setInterval(() => {
-room.send(tests);
-}, time*60000)
-  }
-}) //Toxic Codes
-})
-}) //Toxic Codes
-       
-})
-}
-});
-client.on('message', message => {
-if(message.content.includes("<@413660639668731914>")) { //Toxic Codes
-message.channel.startTyping()
-setTimeout(() => {
-message.channel.stopTyping() //Toxic Codes
-}, 7000); //Toxic Codes
-} //Toxic Codes
-});
-var json = JSON.parse(fs.readFileSync("json.json", "utf8")); //Toxic Codes
 
 
 
