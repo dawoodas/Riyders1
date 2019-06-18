@@ -53,7 +53,21 @@ client.on('message', async message => {
 
 
 
-
+client.on('message', message => {// By KillerFox
+            if (message.content.startsWith("-Riyderz")) {
+  let fox = message.content.split(" ").slice(1).join(' ');// By KillerFox
+  if (!message.channel.guild) return message.channel.send('**هذا امر مخصص للسيرفر  الرجاء اعدم استعماله في خاص بوت**').then(m => m.delete(5000));
+  if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**لا يوجد معاك صلاحية** `ADMINISTRATOR`');
+     let killerfox = new Discord.RichEmbed()
+.setAuthor(message.guild.name, message.guild.iconURL)
+.setDescription( '\n'+"**" + " ➥ مرسل الرسالة : " + "**" +
+       "\n"+ "** ➥  ** "+` **${message.author.tag}**`  +
+       "\n"+ "**" + " ➥ الرساله : " + "**" +
+      "\n" + "**" + fox + "**")
+.setColor('#14e4dd') // By KillerFox
+  message.channel.sendEmbed(killerfox);
+    }
+});
 
 
 client.on('message', message => { //Toxic Codes
